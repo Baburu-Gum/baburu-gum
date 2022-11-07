@@ -1,44 +1,127 @@
 <html>
 <head>
-    <title>Baburu Gum</title>
-    <link rel="stylesheet" href="style.css">
+    <title id="paginatitle">Casa do Baburu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="content">
-            <p2>Bem vindo a nossa</p2>
-            <h1>Melhor Comunidade do<br>Baburu Gum!</h1>
-            <a href="menu.html">
-                <button type="button" class="button2">Venha dar uma participada!</button>
-            </a>
-        </div>
-        <div class="side-bar">
-
-            <a href="index.html">
-                <img src="images/menu.png" class="menu">
-            </a>
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/baburu.gum/">
-                    <img src="images/instagram.png">
-                </a>
-                <a href="https://www.twitch.tv/bubblegummypink">
-                    <img src="images/twitch.png">
-                </a>
-                <a href="https://www.youtube.com/channel/UCMjn-EQ9G1F9YpJNL8TyaZg">
-                    <img src="images/youtube.png">
-                </a>
-            </div>
-        </div>
-
-        <div class="cupcakes">
-            <img src="images/Emote 1.png">
-            <img src="images/Emote 2.png">
-            <img src="images/Emote 3.png">
-            <img src="images/Emote 4.png">
-            <img src="images/Emote 5.png">
-            <img src="images/Emote 6.png">
+    <div class="cupcakes">
+        <img src="images/Emote 1.png">
+        <img src="images/Emote 2.png">
+        <img src="images/Emote 3.png">
+        <img src="images/Emote 4.png">
+        <img src="images/Emote 5.png">
+        <img src="images/Emote 6.png">
+    </div>
+    <div class="UnderBar">
+        <div class="navigation">
+            <ul>
+                <li class="list active">
+                    <a href="#" id="home" onclick="changeToHome()">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Casa</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#" id="Nlog" onclick="changeToBlog()">
+                        <span class="icon">
+                            <ion-icon name="newspaper-outline"></ion-icon>
+                        </span>
+                        <span class="text">Blog</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#" id="sobre" onclick="changeToSobre()">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Sobre</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#" id="redes" onclick="changeToRedes()">
+                        <span class="icon">
+                            <ion-icon name="share-social-outline"></ion-icon>
+                        </span>
+                        <span class="text">Redes Sociais</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
         </div>
     </div>
+    <div class="container">
+        <div class="contain">
+            <div class="pages">
+                <div class="pageHome">
+                    <span>
+                        <span class="imagensdeperfil" id="imagesperfil">
+                            <img src="images/fotodeperfil.jpg" class="imagen1">
+                        </span>
+                        <h1 class="TitleNameSpan" id="TitleNameSpan">
+                            Bem-Vindo! <br> Clique em um dos botões na barra abaixo para mudar de página! <br> <ion-icon class="icongrande" name="arrow-down-circle-outline"></ion-icon>
+                        </h1>
+                        <h1 class="icons" id="icons">
+                            <img src="images/fotodeperfil2.jpg" class="imagen2">
+                        </h1>
+                        <h1 id="Blog">
+
+                        </h1>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item => item.classList.remove('active')));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+    <script>
+        function changeToHome()
+        {
+            document.getElementById('TitleNameSpan').innerHTML = '<h1>Bem-vindo meu caro amigo! Quer um pouco dessa grande novidade? <br> SIM! <br> Estamos com nosso novo site, você e eu, Baburu, nos divertiremos e teremos notícias do Canal Oficial!! <br> Bom, vá lá olhar as minhas redes sociais e segui-lás! <br> Então, ta esperando o quê? Bora lá! <h1> <br>'
+            document.getElementById('paginatitle').innerHTML = 'Casa do Baburu'
+            document.getElementById('icons').innerHTML = '<a href="https://www.twitch.tv/bubblegummypink"> <ion-icon name="logo-twitch"></ion-icon> <h1>Livestreams na Twitch</h1> </a> <br> <a href="https://www.youtube.com/channel/UCMjn-EQ9G1F9YpJNL8TyaZg"> <ion-icon name="logo-youtube"></ion-icon> <h1>Vídeos no Youtube!</h1> </a> <br> <a href="https://www.instagram.com/carlos.nunes.dias/"> <ion-icon name="logo-instagram"></ion-icon> <h1>Fotos do Instagram!</h1> </a>'
+            document.getElementById('imagesperfil').innerHTML = '<h1>Estamos no momento em: Casa do Baburu </h1> <br>'
+            document.getElementById('Blog').innerHTML = ''
+        }
+    </script>
+    <script>
+        function changeToBlog()
+        {
+            document.getElementById('TitleNameSpan').innerHTML =''
+            document.getElementById('paginatitle').innerHTML = 'Blog do Baburu'
+            document.getElementById('icons').innerHTML = 'Olá!'
+            document.getElementById('imagesperfil').innerHTML = ''
+            document.getElementById('Blog').innerHTML = 'No momento não Há notícias! <br> por favor volte mais tarde!'
+        }
+    </script>
+    <script>
+        function changeToSobre()
+        {
+            document.getElementById('TitleNameSpan').innerHTML ='Sobre nosso amigo Baburu'
+            document.getElementById('paginatitle').innerHTML = 'Sobre o Baburu'
+            document.getElementById('icons').innerHTML = 'Baburu Gum ou melhor... Carlos! <br> Streamer e Programador Iniciante! Prodígio ele é, tem 16 anos <br> e tem uma carreira de programação aproximadamente de 7 anos <br> Nasceu e Vive ainda em cidade de interior do Estado de São Paulo! <br> Gosta de gravar vídeos e de fazer livestreams <br> jogando, programando e muitos outros! <br> Por que você não vem conhecer o Baburu lá na: <br> <a href="https://www.twitch.tv/bubblegummypink"> <ion-icon name="logo-twitch"></ion-icon> <h1>Twitch</h1> </a>'
+            document.getElementById('imagesperfil').innerHTML = "<img src='images/fotodeperfil2.jpg' class='imagen2'> <img src='images/fotodeperfil.jpg' class='imagen1'>"
+            document.getElementById('Blog').innerHTML = ''
+        }
+    </script>
+    <script>
+        function changeToRedes()
+        {
+            document.getElementById('TitleNameSpan').innerHTML ='Redes Sociais do Baburu'
+            document.getElementById('paginatitle').innerHTML = 'Redes do Baburu'
+            document.getElementById('icons').innerHTML = '<br> <a href="https://www.twitch.tv/bubblegummypink"> <ion-icon name="logo-twitch"></ion-icon> <h1>Livestreams na Twitch</h1> </a> <br> <a href="https://www.youtube.com/channel/UCMjn-EQ9G1F9YpJNL8TyaZg"> <ion-icon name="logo-youtube"></ion-icon> <h1>Vídeos no Youtube!</h1> </a> <br> <a href="https://www.instagram.com/carlos.nunes.dias/"> <ion-icon name="logo-instagram"></ion-icon> <h1>Fotos do Instagram!</h1> </a>'
+            document.getElementById('imagesperfil').innerHTML = ''
+            document.getElementById('Blog').innerHTML = ''
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
