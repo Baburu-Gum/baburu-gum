@@ -29,7 +29,7 @@ body
     width: 280px;
     height: 70px;
     background: #fff;
-    position: relative;
+    position: fixed;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -50,14 +50,14 @@ body
 }
 .navigation ul li
 {
-    position: relative;
+    position: fixed;
     list-style: none;
     width: 70px;
     height: 70px;
 }
 .navigation ul li a
 {
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,7 +69,7 @@ body
 .navigation ul li a .icon
 {
     z-index: 1;
-    position: relative;
+    position: fixed;
     display: block;
     line-height: 75px;
     font-size: 1.5em;
@@ -91,7 +91,7 @@ body
 }
 .navigation ul li a .text
 {
-    position: absolute;
+    position: fixed;
     color: var(--clr);
     font-weight: 400;
     font-size: 0.75em;
@@ -119,7 +119,7 @@ body
 }
 .indicator
 {
-    position: absolute;
+    position: fixed;
     z-index: 0;
     top: -70%;
     width: 70px;
@@ -140,7 +140,7 @@ body
 .indicator::before
 {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: -22px;
     width: 20px;
@@ -152,7 +152,7 @@ body
 .indicator::after
 {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: -22px;
     width: 20px;
